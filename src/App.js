@@ -46,7 +46,7 @@ function App() {
     function GifDemo() {
       const [gif, setGif] = useState(null);
       useAsync(async () => {
-        const { data } = await giphyFetch.gif("fpXxIjftmkk9y");
+        const { data } = await giphyFetch.random({ tag: 'blink', type: 'stickers' });
         setGif(data);
       }, []);
       return gif && <Gif gif={gif} width={100} />;
