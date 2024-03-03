@@ -1,0 +1,157 @@
+@font-face {
+  font-family: 'recycled';
+  src: url("fonts/3 Times Recycled Old Newspaper.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'asikue';
+  src: url("fonts/AsikueTrial-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'fornire';
+  src: url("fonts/Fornire-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'heathergreen';
+  src: url("fonts/Heathergreen.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'newsworthy';
+  src: url("fonts/Newsworthy.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'sanshiro';
+  src: url("fonts/Sanshiro-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'steelfish';
+  src: url("fonts/steelfish rg.otf") format("opentype");
+}
+
+.App {
+  width: 100%;
+}
+
+.tabloid {
+  margin-top: 0.25em;
+  font-family: times, serif;
+}
+
+.li:nth-of-type(2), .li:nth-of-type(12), .li:nth-of-type(22), .li:nth-of-type(32) {
+  font-family: 'asikue';
+}
+
+.li:nth-of-type(3), .li:nth-of-type(13), .li:nth-of-type(23), .li:nth-of-type(33) {
+  font-family: 'recycled';
+}
+
+.li:nth-of-type(8), .li:nth-of-type(18), .li:nth-of-type(28), .li:nth-of-type(38) {
+  font-family: 'fornire';
+}
+
+.li:nth-of-type(4), .li:nth-of-type(14), .li:nth-of-type(24), .li:nth-of-type(34) {
+  font-family: 'heathergreen';
+}
+
+.li:nth-of-type(5), .li:nth-of-type(15), .li:nth-of-type(25), .li:nth-of-type(35) {
+  font-family: 'newsworthy';
+}
+
+.li:nth-of-type(6), .li:nth-of-type(16), .li:nth-of-type(26), .li:nth-of-type(36) {
+  font-family: 'sanshiro';
+}
+
+.li:nth-of-type(7), .li:nth-of-type(17), .li:nth-of-type(27), .li:nth-of-type(37) {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.answers:nth-of-type(10), .answers:nth-of-type(20), .answers:nth-of-type(30), .answers:nth-of-type(40) {
+  font-family: 'steelfish';
+}
+
+.blink-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+.title {
+  height: 1em;
+  transform: rotate(-50deg);
+  margin-right: -2em;
+  margin-top: 3em;
+  background-color: white;
+  color: black;
+  padding: 0.25em 0.5em 0.5em 0.5em;
+  border: 1px solid red;
+  font-weight:900;
+}
+
+.title2 {
+  height: 1em;
+  transform: rotate(5deg);
+  margin-top: 3em;
+  margin-left: 1em;
+  background-color: white;
+  color: black;
+  padding: 0.25em 0.5em 0.5em 0.5em;
+  border: 1px solid red;
+  font-weight:900;
+}
+
+button.blink-img {
+  width: 10em;
+  height: 10em;
+  background-color: transparent;
+  border: 1.5px solid red;
+  cursor: pointer;
+}
+
+.blink-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.answers {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.li {
+  list-style-type: none;
+  border: 1px solid grey;
+  padding: 0.25em;
+  display: grid;
+  position: relative;
+  flex: 1;
+  min-width: 15%;
+  max-width: 20%;
+  height: calc(50vh - 5.25em);
+  box-shadow: 5px 5px 7px 2px lightgray inset,
+  -5px -5px 7px 2px lightgray inset;
+  background-color: aliceblue;
+}
+/* h-offset v-offset blur spread color */
+
+.gif {
+  margin: auto;
+}
+
+.gif a {
+  border-radius: 0px !important;
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+img.giphy-gif-img, img.giphy-img-loaded {
+  border-radius: 0px !important;
+}
+
