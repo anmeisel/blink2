@@ -1,6 +1,7 @@
 import './App.css';
 import { React, useState, useEffect } from 'react';
-import blinkGif from './output-onlinegiftools.gif'
+// import blinkGif from './blink.gif'
+// import noblinkGif from './noblink.png'
 import { Gif } from '@giphy/react-components'
 import { GiphyFetch } from '@giphy/js-fetch-api'
 import { useAsync } from "react-async-hook";
@@ -12,7 +13,7 @@ function App() {
   const [clickedData, setClickedData] = useState([])
   const [clickedDataFive, setClickedDataFive] = useState([])
   const [blink, setBlink] = useState("visible")
-  const [blinkGifUrl, setBlinkGifUrl] = useState('./output-onlinegiftools.gif')
+  const [noblinking, setBlinking] = useState("none")
 
     const apikey = 'a8ec3adf11a71a6e3ef495d42c8fb9f4';
     const category = 'world';
@@ -25,12 +26,12 @@ function App() {
       setBlink("hidden");
       setTimeout(() => {
         setBlink("visible");
+        setBlinking("block");
+        // setBlinkGifUrl("https://external-pages.s3.amazonaws.com/art/blink.gif")
       }, 250);
 
-      // force reload on gif
-      const randomQuery = Math.random();
-      setBlinkGifUrl(`./output-onlinegiftools.gif?${randomQuery}`);
-
+      setBlinking("none");
+      
       const nextIndex = currentData >= data.length - 1 ? 0 : currentData + 1;
       setCurrentData(nextIndex);
       setClickedData([...clickedData, currentData]);
@@ -48,7 +49,7 @@ function App() {
         const { data } = await giphyFetch.random({ tag: 'blink', type: 'stickers' });
         setGif(data);
       }, []);
-      return gif && <Gif gif={gif} width={100} />;
+      return gif && <Gif gif={gif} width={100} backgroundColor='rgb(248,196,196)' height={100} />;
     }
 
 
@@ -57,7 +58,10 @@ function App() {
       <div className="tabloid">
           <div onClick={() => nextData()} className="blink-button">
             <div className="title">Blink to update: </div>
-            <button className="blink-img" onClick={nextData}><img id="blink" src={blinkGif} alt="Blinking eye gif"></img></button>
+            <button className="blink-img" onClick={nextData}>
+              <img class="blink yesblink" src="blink.gif" alt="Blinking eye jpg"/>
+              <img class="blink noblink" style={{ display: noblinking }} src="noblink.jpg" alt="Blinking eye gif"/>
+            </button>
             <div className="title2">Click my eye!!</div>
           </div>
             <div style={{ visibility: blink }} className="answers"> 
