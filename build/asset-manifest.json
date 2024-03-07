@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fef86b3f.css",
+    "main.js": "/static/js/main.fd9f54b7.js",
+    "static/js/453.3224c42e.chunk.js": "/static/js/453.3224c42e.chunk.js",
+    "static/media/Fornire-Light.otf": "/static/media/Fornire-Light.becac9f12166f0733aab.otf",
+    "static/media/Heathergreen.otf": "/static/media/Heathergreen.6bd4d9044f76dd2b2ed3.otf",
+    "static/media/3 Times Recycled Old Newspaper.otf": "/static/media/3 Times Recycled Old Newspaper.e81e7b1d63cfbada216b.otf",
+    "static/media/steelfish rg.otf": "/static/media/steelfish rg.09ba69872e45cdf44c84.otf",
+    "static/media/Newsworthy.otf": "/static/media/Newsworthy.1e32599e5b55ccfaf180.otf",
+    "static/media/Sanshiro-Black.ttf": "/static/media/Sanshiro-Black.080fba22febb553d6e08.ttf",
+    "static/media/AsikueTrial-Regular.otf": "/static/media/AsikueTrial-Regular.28d3194ce753bffcb86d.otf",
+    "index.html": "/index.html",
+    "main.fef86b3f.css.map": "/static/css/main.fef86b3f.css.map",
+    "main.fd9f54b7.js.map": "/static/js/main.fd9f54b7.js.map",
+    "453.3224c42e.chunk.js.map": "/static/js/453.3224c42e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fef86b3f.css",
+    "static/js/main.fd9f54b7.js"
+  ]
+}
