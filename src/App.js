@@ -99,9 +99,9 @@ function App() {
   return (
     <div className="App">
       <div className="tabloid">
-          <div onClick={() => nextData()} className="blink-button">
+          <div className="blink-button">
             <div className="title">Blink to update: </div>
-            <button className="blink-img" onClick={nextData}>
+            <button className="blink-img" onClick={() => nextData()}>
               <img class="blink yesblink" src="blink.gif" alt="Blinking eye jpg"/>
               <img class="blink noblink" style={{ display: noblinking }} src="noblink.jpg" alt="Blinking eye gif"/>
             </button>
