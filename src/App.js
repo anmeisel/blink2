@@ -6,7 +6,8 @@ import { Gif } from '@giphy/react-components'
 import { GiphyFetch } from '@giphy/js-fetch-api'
 import { useAsync } from "react-async-hook";
 import AdSense from 'react-adsense';
-import ImgurComponent from './Imgur'
+import ImgurComponent from './Imgur';
+import EbayComponent from './Ebay'
 const keyword_extractor = require("keyword-extractor");
 
 
@@ -135,7 +136,7 @@ function App() {
               ))}
               {Math.random() > 0.4 && clickedData.length > 0 && ( 
                 <div className="li" key={data[currentData].publishedAt}>
-                  <ImgurComponent/>
+                  <EbayComponent/>
                 </div>
               )}
             </div>
