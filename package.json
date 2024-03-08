@@ -9,6 +9,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "add": "^2.0.6",
+    "ebay-items-react-widget": "^1.0.1",
     "http": "^0.0.1-security",
     "keyword-extractor": "^0.0.28",
     "querystring": "^0.2.1",

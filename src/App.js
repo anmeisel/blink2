@@ -108,11 +108,6 @@ function App() {
             <div className="title2">Click my eye!!</div>
           </div>
             <div style={{ visibility: blink }} className="answers"> 
-              {Math.random() > 0.4 && clickedData.length > 0 && ( 
-                <div className="li" key={data[currentData].publishedAt}>
-                  <ImgurComponent/>
-                </div>
-              )}
               {data[currentData] && (
                 <div className="li" key={data[currentData].publishedAt}>
                   <h2 class="newstitle">{data[currentData].title}</h2>

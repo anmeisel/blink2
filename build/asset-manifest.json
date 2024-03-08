@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d4c8b377.css",
-    "main.js": "/static/js/main.de22a047.js",
+    "main.js": "/static/js/main.f3cd21d9.js",
     "static/js/453.3224c42e.chunk.js": "/static/js/453.3224c42e.chunk.js",
     "static/media/Fornire-Light.otf": "/static/media/Fornire-Light.becac9f12166f0733aab.otf",
     "static/media/Heathergreen.otf": "/static/media/Heathergreen.6bd4d9044f76dd2b2ed3.otf",
@@ -12,11 +12,11 @@
     "static/media/AsikueTrial-Regular.otf": "/static/media/AsikueTrial-Regular.28d3194ce753bffcb86d.otf",
     "index.html": "/index.html",
     "main.d4c8b377.css.map": "/static/css/main.d4c8b377.css.map",
-    "main.de22a047.js.map": "/static/js/main.de22a047.js.map",
+    "main.f3cd21d9.js.map": "/static/js/main.f3cd21d9.js.map",
     "453.3224c42e.chunk.js.map": "/static/js/453.3224c42e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d4c8b377.css",
-    "static/js/main.de22a047.js"
+    "static/js/main.f3cd21d9.js"
   ]
 }
