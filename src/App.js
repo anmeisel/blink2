@@ -6,6 +6,7 @@ import { Gif } from '@giphy/react-components'
 import { GiphyFetch } from '@giphy/js-fetch-api'
 import { useAsync } from "react-async-hook";
 import AdSense from 'react-adsense';
+import ImgurComponent from './Imgur'
 const keyword_extractor = require("keyword-extractor");
 
 
@@ -107,6 +108,11 @@ function App() {
             <div className="title2">Click my eye!!</div>
           </div>
             <div style={{ visibility: blink }} className="answers"> 
+              {Math.random() > 0.4 && clickedData.length > 0 && ( 
+                <div className="li" key={data[currentData].publishedAt}>
+                  <ImgurComponent/>
+                </div>
+              )}
               {data[currentData] && (
                 <div className="li" key={data[currentData].publishedAt}>
                   <h2 class="newstitle">{data[currentData].title}</h2>
@@ -115,6 +121,11 @@ function App() {
                   <div className="gif">
                     <GifDemo/>
                   </div>
+                </div>
+              )}
+              {Math.random() > 0.4 && clickedData.length > 0 && ( 
+                <div className="li" key={data[currentData].publishedAt}>
+                  <ImgurComponent/>
                 </div>
               )}
               {clickedData.length > 0 && clickedData.map((questionIndex, index) => (
@@ -127,6 +138,11 @@ function App() {
                   </div>
                 </div>
               ))}
+              {Math.random() > 0.4 && clickedData.length > 0 && ( 
+                <div className="li" key={data[currentData].publishedAt}>
+                  <ImgurComponent/>
+                </div>
+              )}
             </div>
         </div>
     </div>
@@ -134,5 +150,4 @@ function App() {
 }
 
 export default App;
-
 
