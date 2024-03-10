@@ -38,6 +38,27 @@ function App() {
      fetch(url).then(result => result.json()).then(alldata => setData(alldata.articles)).catch(error => console.log(error.message))
     }, [])
 
+    const urlvinted = 'https://vinted3.p.rapidapi.com/getSearch?country=us&page=1&order=newest_first';
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': '149c13c63amsh5015475dafad941p18992ajsnc6524a1363a9',
+        'X-RapidAPI-Host': 'vinted3.p.rapidapi.com'
+      }
+    };
+
+    useAsync(async () => {
+      try {
+        const response = await fetch(urlvinted, options);
+        const result = await response.text();
+        const jsondata = JSON.parse(result);
+        console.log(jsondata);
+        setVinted(jsondata);
+      } catch (error) {
+        console.error(error);
+      }
+    }, [])
+
     // const ebaycategory = "drones"
     // const ebayurl = "https://cors-anywhere.herokuapp.com/https://api.ebay.com/buy/browse/v1/item_summary/search?q=drone&limit=3"
     // useEffect(() => {
@@ -131,6 +152,18 @@ function App() {
                   <img class="newsimg" style={{left:Math.random()*15 + "%",top:Math.random()*40 + "%"}} src={data[questionIndex].image}></img>
                   <div className="gif">
                     <GifDemo/>
+                  </div>
+                </div>
+              ))}
+              {clickedData.length > 0 && Math.random() > 0.6 && clickedData.map((questionIndex, index) => (
+                <div className="li" key={Math.random()}>
+                  <div key={vinted[questionIndex].productId} style={{background: 'white'}}>
+                    <h3 style={{top: '0%'},{marginLeft:'5px',marginTop:'0px', marginBottom:'1px'}}>{vinted[questionIndex].title}</h3>
+                    <h4 style={{textDecoration:'underline',marginTop:'1px',marginLeft:'5px'}}>{vinted[questionIndex].brand}</h4>
+                    <a href={vinted[questionIndex].url}>
+                      <img className="vintedimg" src={vinted[questionIndex].image} href={vinted[questionIndex].url} style={{borderColor:'red',borderStyle:'solid',borderWidth:'1.5px'}}></img>
+                    </a>
+                    <h4 style={{margin: '5px', backgroundColor: '#017783', color:'white'}}>{vinted[questionIndex].price.amount}{vinted[questionIndex].price.currency}</h4>
                   </div>
                 </div>
               ))}
