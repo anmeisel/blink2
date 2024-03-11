@@ -20,12 +20,13 @@ const keywords = [];
 function App() {
   const [currentData, setCurrentData] = useState(0)
   const [currentDataFive, setCurrentDataFive] = useState(5)
+  const [vintedcurrentData, setVintedCurrentData] = useState(0)
   const [data, setData] = useState([]);
-  //experiment
   const [vinted, setVinted] = useState([]);
   const [ebaydata, setEbay] = useState([]);
   const [clickedData, setClickedData] = useState([])
   const [clickedDataFive, setClickedDataFive] = useState([])
+  const [clickedVintedData, setClickedVintedData] = useState([])
   const [blink, setBlink] = useState("visible")
   const [noblinking, setBlinking] = useState("none")
 
@@ -87,6 +88,10 @@ function App() {
       const nextIndexFive = currentDataFive >= data.length - 1 ? 0 : currentDataFive + 1;
       setCurrentDataFive(nextIndexFive);
       setCurrentDataFive([...clickedDataFive, currentDataFive]);
+
+      const vintedNextIndex = vintedcurrentData >= vinted.length - 1 ? 0 : vintedcurrentData + 1;
+      setVintedCurrentData(vintedNextIndex);
+      setClickedVintedData([...clickedVintedData, vintedcurrentData]);
     }
 
     const giphyFetch = new GiphyFetch('bvWogBDRALOdICcvDhJPS5XVxe50qs7O')
@@ -141,14 +146,15 @@ function App() {
                   <img class="newsimg" id={ Math.random()>0.25 ? 'blink' : '' } style={{left:Math.random()*15 + "%",top:Math.random()*40 + "%"}} src={data[currentData].image}></img>
                   <div className="gif">
                     <GifDemo/>
+                    <div className='imgur'><ImgurComponent/></div>
                   </div>
                 </div>
               )}
-              {Math.random() > 0.4 && clickedData.length > 0 && ( 
-                <div className="li" key={data[currentData].publishedAt}>
+              {/* {Math.random() > 0.4 && clickedData.length > 0 && ( 
+                <div className="li">
                   <ImgurComponent/>
                 </div>
-              )}
+              )} */}
               {clickedData.length > 0 && clickedData.map((questionIndex, index) => (
                 <div className="li" key={index}>
                   <h2 class="newstitle">{data[questionIndex] && data[questionIndex].title}</h2>
@@ -156,6 +162,7 @@ function App() {
                   <img class="newsimg" style={{left:Math.random()*15 + "%",top:Math.random()*40 + "%"}} src={data[questionIndex].image}></img>
                   <div className="gif">
                     <GifDemo/>
+                    <div className='imgur'><ImgurComponent/></div>
                   </div>
                 </div>
               ))}
@@ -194,14 +201,13 @@ function App() {
                       </span>
                     </button>
                     {/* <h4 style={{margin: '5px', backgroundColor: '#017783', color:'white'}}>{vinted[questionIndex].price.amount}{vinted[questionIndex].price.currency}</h4> */}
-                  {/* </div> */}
-                </div>
+                  </div>
               ))}
-              {Math.random() > 0.4 && clickedData.length > 0 && ( 
+              {/* {Math.random() > 0.4 && clickedData.length > 0 && ( 
                 <div className="li" key={data[currentData].publishedAt}>
                   <EbayComponent/>
                 </div>
-              )}
+              )} */}
             </div>
         </div>
     </div>
