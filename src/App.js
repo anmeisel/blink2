@@ -21,6 +21,8 @@ function App() {
   const [currentData, setCurrentData] = useState(0)
   const [currentDataFive, setCurrentDataFive] = useState(5)
   const [data, setData] = useState([]);
+  //experiment
+  const [vinted, setVinted] = useState([]);
   const [ebaydata, setEbay] = useState([]);
   const [clickedData, setClickedData] = useState([])
   const [clickedDataFive, setClickedDataFive] = useState([])
@@ -43,7 +45,9 @@ function App() {
       method: 'GET',
       headers: {
         'X-RapidAPI-Key': '149c13c63amsh5015475dafad941p18992ajsnc6524a1363a9',
-        'X-RapidAPI-Host': 'vinted3.p.rapidapi.com'
+        'X-RapidAPI-Host': 'vinted3.p.rapidapi.com',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
       }
     };
 
@@ -131,10 +135,10 @@ function App() {
           </div>
             <div style={{ visibility: blink }} className="answers"> 
               {data[currentData] && (
-                <div className="li" key={data[currentData].publishedAt}>
-                  <h2 class="newstitle">{data[currentData].title}</h2>
-                  <p class="newscontent">{data[currentData].content}</p>
-                  <img class="newsimg" style={{left:Math.random()*15 + "%",top:Math.random()*40 + "%"}} src={data[currentData].image}></img>
+                <div className='li' id={ Math.random()>0.15 ? 'blink' : '' } key={data[currentData].publishedAt}>
+                  <h2 className="newstitle">{data[currentData].title}</h2>
+                  <p className="newscontent" id={ Math.random()>0.10 ? 'tired' : '' }>{data[currentData].content}</p>
+                  <img class="newsimg" id={ Math.random()>0.25 ? 'blink' : '' } style={{left:Math.random()*15 + "%",top:Math.random()*40 + "%"}} src={data[currentData].image}></img>
                   <div className="gif">
                     <GifDemo/>
                   </div>
@@ -155,16 +159,42 @@ function App() {
                   </div>
                 </div>
               ))}
-              {clickedData.length > 0 && Math.random() > 0.6 && clickedData.map((questionIndex, index) => (
-                <div className="li" key={Math.random()}>
-                  <div key={vinted[questionIndex].productId} style={{background: 'white'}}>
-                    <h3 style={{top: '0%'},{marginLeft:'5px',marginTop:'0px', marginBottom:'1px'}}>{vinted[questionIndex].title}</h3>
-                    <h4 style={{textDecoration:'underline',marginTop:'1px',marginLeft:'5px'}}>{vinted[questionIndex].brand}</h4>
+              {clickedData.length > 0 && clickedData.map((questionIndex, index) => (
+                <div className="li" key={vinted[questionIndex].productId}>
+                  {/* <div style={{background: 'white',width:'100%'}}>  */}
                     <a href={vinted[questionIndex].url}>
-                      <img className="vintedimg" src={vinted[questionIndex].image} href={vinted[questionIndex].url} style={{borderColor:'red',borderStyle:'solid',borderWidth:'1.5px'}}></img>
+                      <img src={vinted[questionIndex].image} className="vintedimg" href={vinted[questionIndex].url}></img>
+                    {/* <iframe src={vinted[questionIndex].url} cookieconsent="marketing" className="vintediframe" href={vinted[questionIndex].url} frameBorder="0"></iframe> */}
                     </a>
-                    <h4 style={{margin: '5px', backgroundColor: '#017783', color:'white'}}>{vinted[questionIndex].price.amount}{vinted[questionIndex].price.currency}</h4>
-                  </div>
+                    <h3 style={{color:'red', zIndex:'6',marginTop:'-30%'}}>{vinted[questionIndex].title}</h3>
+                    <h4 style={{color:'red',textDecoration:'underline',bottom:'0px',marginLeft:'5px', zIndex:'6', marginTop:'20%'}}>{vinted[questionIndex].brand}</h4>
+                    <button href={vinted[questionIndex].url} id='blink' style={{
+                      position: 'absolute',
+                      height:'30%',
+                      width:'100%',
+                      outline: 'none',
+                      borderRadius:'0',
+                      borderWidth:'10px',
+                      borderTopColor: '#FF4433',
+                      borderLeftColor: '#FF4433',
+                      borderBottomColor: '#DC143C',
+                      borderRightColor: '#DC143C',
+                      backgroundColor:'#FF3131',
+                      color: 'yellow',
+                      // borderTop:'10px solid red',
+                      // borderLeft:'0px',
+                      // borderRight:'0px',
+                      // borderBottom:'0px',
+                      bottom:'0',
+                      right:'0',
+                      left:'0',
+                      textAlign:'bottom'}}>
+                      <span className="buttonspan">
+                        BUY NOW ON VINTED {vinted[questionIndex].price.amount}{vinted[questionIndex].price.currency}
+                      </span>
+                    </button>
+                    {/* <h4 style={{margin: '5px', backgroundColor: '#017783', color:'white'}}>{vinted[questionIndex].price.amount}{vinted[questionIndex].price.currency}</h4> */}
+                  {/* </div> */}
                 </div>
               ))}
               {Math.random() > 0.4 && clickedData.length > 0 && ( 
