@@ -7,6 +7,7 @@
     "@emotion/styled": "^11.11.0",
     "@giphy/js-fetch-api": "^5.4.0",
     "@giphy/react-components": "^9.3.0",
+    "@mui/lab": "^5.0.0-alpha.167",
     "@mui/material": "^5.15.12",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -22,8 +23,10 @@
     "react-async-hook": "^4.0.0",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.6",
-    "react-scripts": "^0.0.0",
+    "react-material-ui-carousel": "^3.4.2",
+    "react-scripts": "^5.0.1",
     "stream-http": "^3.2.0",
+    "styled-components": "^6.1.8",
     "url": "^0.11.3",
     "web-vitals": "^2.1.4"
   },
@@ -50,5 +53,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
