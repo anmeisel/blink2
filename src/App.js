@@ -20,10 +20,13 @@ const keywords = [];
 function App() {
   const [currentData, setCurrentData] = useState(0)
   const [currentDataFive, setCurrentDataFive] = useState(5)
+  const [vintedcurrentData, setVintedCurrentData] = useState(0)
   const [data, setData] = useState([]);
+  const [vinted, setVinted] = useState([]);
   const [ebaydata, setEbay] = useState([]);
   const [clickedData, setClickedData] = useState([])
   const [clickedDataFive, setClickedDataFive] = useState([])
+  const [clickedVintedData, setClickedVintedData] = useState([])
   const [blink, setBlink] = useState("visible")
   const [noblinking, setBlinking] = useState("none")
 
@@ -83,6 +86,10 @@ function App() {
       const nextIndexFive = currentDataFive >= data.length - 1 ? 0 : currentDataFive + 1;
       setCurrentDataFive(nextIndexFive);
       setCurrentDataFive([...clickedDataFive, currentDataFive]);
+
+      const vintedNextIndex = vintedcurrentData >= vinted.length - 1 ? 0 : vintedcurrentData + 1;
+      setVintedCurrentData(vintedNextIndex);
+      setClickedVintedData([...clickedVintedData, vintedcurrentData]);
     }
 
     const giphyFetch = new GiphyFetch('bvWogBDRALOdICcvDhJPS5XVxe50qs7O')
@@ -137,14 +144,15 @@ function App() {
                   <img class="newsimg" style={{left:Math.random()*15 + "%",top:Math.random()*40 + "%"}} src={data[currentData].image}></img>
                   <div className="gif">
                     <GifDemo/>
+                    <div className='imgur'><ImgurComponent/></div>
                   </div>
                 </div>
               )}
-              {Math.random() > 0.4 && clickedData.length > 0 && ( 
-                <div className="li" key={data[currentData].publishedAt}>
+              {/* {Math.random() > 0.4 && clickedData.length > 0 && ( 
+                <div className="li">
                   <ImgurComponent/>
                 </div>
-              )}
+              )} */}
               {clickedData.length > 0 && clickedData.map((questionIndex, index) => (
                 <div className="li" key={index}>
                   <h2 class="newstitle">{data[questionIndex] && data[questionIndex].title}</h2>
@@ -152,26 +160,27 @@ function App() {
                   <img class="newsimg" style={{left:Math.random()*15 + "%",top:Math.random()*40 + "%"}} src={data[questionIndex].image}></img>
                   <div className="gif">
                     <GifDemo/>
+                    <div className='imgur'><ImgurComponent/></div>
                   </div>
                 </div>
               ))}
-              {clickedData.length > 0 && Math.random() > 0.6 && clickedData.map((questionIndex, index) => (
+              {clickedVintedData.length > 0 && Math.random() > 0.6 && clickedVintedData.map((vintedIndex, index) => (
                 <div className="li" key={Math.random()}>
-                  <div key={vinted[questionIndex].productId} style={{background: 'white'}}>
-                    <h3 style={{top: '0%'},{marginLeft:'5px',marginTop:'0px', marginBottom:'1px'}}>{vinted[questionIndex].title}</h3>
-                    <h4 style={{textDecoration:'underline',marginTop:'1px',marginLeft:'5px'}}>{vinted[questionIndex].brand}</h4>
-                    <a href={vinted[questionIndex].url}>
-                      <img className="vintedimg" src={vinted[questionIndex].image} href={vinted[questionIndex].url} style={{borderColor:'red',borderStyle:'solid',borderWidth:'1.5px'}}></img>
+                  <div key={vinted[vintedIndex].productId} style={{background: 'white'}}>
+                    <h3 style={{top: '0',marginLeft:'5px',marginTop:'0px', marginBottom:'1px'}}>{vinted[vintedIndex].title}</h3>
+                    <h4 style={{textDecoration:'underline',marginTop:'1px',marginLeft:'5px'}}>{vinted[vintedIndex].brand}</h4>
+                    <a href={vinted[vintedIndex].url}>
+                      <img className="vintedimg" src={vinted[vintedIndex].image} href={vinted[vintedIndex].url} style={{borderColor:'red',borderStyle:'solid',borderWidth:'1.5px'}}></img>
                     </a>
-                    <h4 style={{margin: '5px', backgroundColor: '#017783', color:'white'}}>{vinted[questionIndex].price.amount}{vinted[questionIndex].price.currency}</h4>
+                    <h4 style={{margin: '5px', backgroundColor: '#017783', color:'white'}}>{vinted[vintedIndex].price.amount}{vinted[vintedIndex].price.currency}</h4>
                   </div>
                 </div>
               ))}
-              {Math.random() > 0.4 && clickedData.length > 0 && ( 
+              {/* {Math.random() > 0.4 && clickedData.length > 0 && ( 
                 <div className="li" key={data[currentData].publishedAt}>
                   <EbayComponent/>
                 </div>
-              )}
+              )} */}
             </div>
         </div>
     </div>
