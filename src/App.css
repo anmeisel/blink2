@@ -210,6 +210,14 @@ img.yesblink {
   z-index: 0;
 }
 
+.vintedimg {
+  position:absolute;
+  width: 70%;
+  height: 40%;
+  margin-left: 15%;
+  margin-top: 10%;
+}
+
 .newstitle {
   position:absolute;
   z-index: 3;
