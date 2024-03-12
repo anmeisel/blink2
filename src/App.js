@@ -158,9 +158,9 @@ function App() {
               {clickedData.length > 0 && clickedData.map((questionIndex, index) => (
                 Math.random() > 0.3
                 ? (
-                <div className="li" id={ Math.random()>0.15 ? 'blink' : '' } key={index}>
-                  <h2 className="newstitle">{data[currentData].title}</h2>
-                  <p className="newscontent" id={ Math.random()>0.10 ? 'tired' : '' }>{data[currentData].content}</p>
+                <div className="li" id={ Math.random()>0.15 ? 'blink' : '' } key={data[questionIndex].publishedAt}>
+                  <h2 className="newstitle">{data[questionIndex].title}</h2>
+                  <p className="newscontent" id={ Math.random()>0.10 ? 'tired' : '' }>{data[questionIndex].content}</p>
                   <img class="newsimg" style={{left:Math.random()*15 + "%",top:Math.random()*40 + "%"}} src={data[questionIndex].image}></img>
                   <div className="gif">
                     <GifDemo/>
@@ -172,10 +172,11 @@ function App() {
                 ? (
                   <div className="li" key={vinted[questionIndex].productId}>
                   {/* <div style={{background: 'white',width:'100%'}}>  */}
+                    {/* <div className="imgcontainer"> */}
                     <a href={vinted[questionIndex].url}>
                       <img src={vinted[questionIndex].image} className="vintedimg" href={vinted[questionIndex].url}></img>
-                    {/* <iframe src={vinted[questionIndex].url} cookieconsent="marketing" className="vintediframe" href={vinted[questionIndex].url} frameBorder="0"></iframe> */}
                     </a>
+                    {/* </div> */}
                     <h3 style={{color:'red', zIndex:'6',marginTop:'-30%'}}>{vinted[questionIndex].title}</h3>
                     <h4 style={{color:'red',textDecoration:'underline',bottom:'0px',marginLeft:'5px', zIndex:'6', marginTop:'20%'}}>{vinted[questionIndex].brand}</h4>
                     <button href={vinted[questionIndex].url} id='blink' style={{
