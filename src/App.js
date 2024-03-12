@@ -146,27 +146,30 @@ function App() {
                   <img class="newsimg" id={ Math.random()>0.25 ? 'blink' : '' } style={{left:Math.random()*15 + "%",top:Math.random()*40 + "%"}} src={data[currentData].image}></img>
                   <div className="gif">
                     <GifDemo/>
-                    <div className='imgur'><ImgurComponent/></div>
+                    {/* <div className='imgur'><ImgurComponent/></div> */}
                   </div>
                 </div>
               )}
-              {/* {Math.random() > 0.4 && clickedData.length > 0 && ( 
+              {Math.random() > 0.4 && clickedData.length > 0 && ( 
                 <div className="li">
                   <ImgurComponent/>
                 </div>
-              )} */}
+              )}
               {clickedData.length > 0 && clickedData.map((questionIndex, index) => (
                 Math.random() > 0.3
-                ? (<div className="li" key={index}>
-                  <h2 class="newstitle">{data[questionIndex] && data[questionIndex].title}</h2>
-                  <p class="newscontent">{data[questionIndex].content}</p>
+                ? (
+                <div className="li" id={ Math.random()>0.15 ? 'blink' : '' } key={index}>
+                  <h2 className="newstitle">{data[currentData].title}</h2>
+                  <p className="newscontent" id={ Math.random()>0.10 ? 'tired' : '' }>{data[currentData].content}</p>
                   <img class="newsimg" style={{left:Math.random()*15 + "%",top:Math.random()*40 + "%"}} src={data[questionIndex].image}></img>
                   <div className="gif">
                     <GifDemo/>
-                    <div className='imgur'><ImgurComponent/></div>
+                    {/* <div className='imgur'><ImgurComponent/></div> */}
                   </div>
-                </div>)
-                : (
+                </div>
+                )
+                : Math.random() >= 0.4
+                ? (
                   <div className="li" key={vinted[questionIndex].productId}>
                   {/* <div style={{background: 'white',width:'100%'}}>  */}
                     <a href={vinted[questionIndex].url}>
@@ -199,12 +202,17 @@ function App() {
                     {/* <h4 style={{margin: '5px', backgroundColor: '#017783', color:'white'}}>{vinted[questionIndex].price.amount}{vinted[questionIndex].price.currency}</h4> */}
                   </div>
                 )
-              ))}
-              {/* {Math.random() > 0.4 && clickedData.length > 0 && ( 
-                <div className="li" key={data[currentData].publishedAt}>
-                  <EbayComponent/>
+                : (
+                <div className="li">
+                   <ImgurComponent/>
                 </div>
-              )} */}
+                )
+              ))}
+              {Math.random() > 0.4 && clickedData.length > 0 && ( 
+                  <div className="li">
+                    <ImgurComponent/>
+                  </div>
+              )}
             </div>
         </div>
     </div>
