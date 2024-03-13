@@ -131,12 +131,13 @@ function App() {
     <div className="App">
       <div className="tabloid">
           <div className="blink-button">
-            <div className="title">Blink to update: </div>
+            {/* <div className="title">Blink to update: </div> */}
             <button className="blink-img" onClick={() => nextData()}>
-              <img class="blink yesblink" src="blink.gif" alt="Blinking eye jpg"/>
-              <img class="blink noblink" style={{ display: noblinking }} src="noblink.jpg" alt="Blinking eye gif"/>
-            </button>
-            <div className="title2">Click my eye!!</div>
+              <img class="blink yesblink" src="eyes.gif" alt="Blinking eye jpg"/>
+              <img class="blink noblink" style={{ display: noblinking }} src="eyesopen.jpg" alt="Blinking eye gif"/>
+            </button>       
+            {/* <span class="blink yesblink newstitle" >CLICK ME</span>      */}
+            {/* <div className="title2">Click my eye!!</div> */}
           </div>
             <div style={{ visibility: blink }} className="answers"> 
               {data[currentData] && (
