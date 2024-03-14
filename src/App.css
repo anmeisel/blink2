@@ -280,6 +280,10 @@ img.yesblink {
 
 }
 
+.vinteddiv {
+  z-index: 15;
+}
+
 .buttonspan {
   display: inline-block;
   -webkit-transform: scale(1, 8.5);

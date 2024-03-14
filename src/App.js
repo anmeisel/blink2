@@ -135,9 +135,7 @@ function App() {
             <button className="blink-img" onClick={() => nextData()}>
               <img class="blink yesblink" src="eyes.gif" alt="Blinking eye jpg"/>
               <img class="blink noblink" style={{ display: noblinking }} src="eyesopen.jpg" alt="Blinking eye gif"/>
-            </button>       
-            {/* <span class="blink yesblink newstitle" >CLICK ME</span>      */}
-            {/* <div className="title2">Click my eye!!</div> */}
+              </button>  
           </div>
             <div style={{ visibility: blink }} className="answers"> 
               {data[currentData] && (
@@ -171,7 +169,7 @@ function App() {
                 )
                 : Math.random() >= 0.4
                 ? (
-                  <div className="li" key={vinted[questionIndex].productId}>
+                  <div className="li vinteddiv" key={vinted[questionIndex].productId}>
                   {/* <div style={{background: 'white',width:'100%'}}>  */}
                     {/* <div className="imgcontainer"> */}
                     <a href={vinted[questionIndex].url}>
@@ -196,7 +194,8 @@ function App() {
                       bottom:'0',
                       right:'0',
                       left:'0',
-                      textAlign:'bottom'}}>
+                      textAlign:'bottom',
+                      cursor: 'pointer'}}>
                       <span className="buttonspan">
                         BUY NOW ON VINTED {vinted[questionIndex].price.amount}{vinted[questionIndex].price.currency}
                       </span>
