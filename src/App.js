@@ -135,7 +135,8 @@ function App() {
             <button className="blink-img" onClick={() => nextData()}>
               <img class="blink yesblink" src="eyes.gif" alt="Blinking eye jpg"/>
               <img class="blink noblink" style={{ display: noblinking }} src="eyesopen.jpg" alt="Blinking eye gif"/>
-              </button>  
+            </button>  
+            <div className="shimmer-shell"><p className="shimmer">Click...</p></div>
           </div>
             <div style={{ visibility: blink }} className="answers"> 
               {data[currentData] && (

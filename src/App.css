@@ -132,6 +132,7 @@ button.blink-img {
   border: 1.5px solid red;
   /* cursor: pointer; */
   display: inline-block;
+  cursor: pointer;
 }
 
 #clicktext {
@@ -152,6 +153,7 @@ button.blink-img {
   display: flex;
   flex-flow: row wrap;
   width: 100%;
+  cursor: auto !important;
 }
 
 .li {
@@ -167,6 +169,11 @@ button.blink-img {
   box-shadow: 10px 10px 40px 1px lightcoral inset,
   -10px -10px 40px 1px lightcoral inset;
   background-color: rgb(248,196,196);
+  cursor: auto !important;
+}
+
+.li:hover {
+  cursor: auto !important;
 }
 
 #blink {
@@ -308,5 +315,97 @@ img.yesblink {
   z-index: 3;
   top: 35%;
 }
+/* 
+.shimmer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 999;
+  position: none;
+  height: 100vh;
+} */
 
+.shimmer-shell {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+  width: 100vw;
+  height:100vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
 
+.shimmer {
+  position: absolute;
+  padding: 0 2.5em 0 2.5em;
+  bottom: 0;
+  opacity: 0.75;
+}
+
+.shimmer {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 3.5em;
+  color: rgba(255, 255, 255, 0.1);
+  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, yellow));
+  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, yellow));
+  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, yellow));
+  -webkit-background-size: 125px 100%;
+  -moz-background-size: 125px 100%;
+  background-size: 125px 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-animation-name: shimmer;
+  -moz-animation-name: shimmer;
+  animation-name: shimmer;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: #222;
+  text-shadow: 0 0 15px #fff, 0 0 30px #e6e600, 0 0 70px #e6e600;
+}
+
+@-moz-keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
+
+@-webkit-keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
+
+@-o-keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
+
+@keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
